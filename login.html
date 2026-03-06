@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cosmetics Wabsite</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(image1.jpeg);
+    background-size: cover; 
+
+}
+
+.logo {
+    position: fixed;          /* stays in corner even on scroll */
+    top: 20px;
+    left: 30px;
+
+    font-size: 30px;
+    font-weight: bold;
+    color: #f06292;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+}
+
+
+
+/* Full page center */
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;   /* vertical center */
+    padding-left: 50px;
+}
+
+/* Left content */
+.left {
+    width: 40%;
+}
+
+/* Text styling */
+.left h1 {
+    font-size: 20px;
+    color: #333;
+}
+
+.left h1 span {
+    color: #e75480;
+}
+
+.login-box {
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Heading */
+.login-box h2 {
+    color: #f06292;
+    margin-bottom: 25px;
+}
+
+/* Inputs */
+.login-box input {
+    width: 90%;
+    padding: 8px;
+    margin: 15px auto;
+    text-align: center;
+    border: 1px solid #615a5a;
+    border-radius: 25px;
+    font-size: 14px;
+}
+
+/* Button */
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f06292;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 15px  auto;
+}
+
+.login-box button:hover {
+    background-color: #e75480;
+}
+
+/* Signup text */
+.signup {
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.signup a {
+    color: #f06292;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Left Section -->
+    <div class="left">
+        <h2 class="logo">Beauty Glow</h2>
+          <h1>
+        Experience Your <span>True Beauty</span> with Us
+      </h1>
+
+     <div class="login-box">
+    <h2>Login</h2>
+
+    <input type="email" placeholder="Enter your email">
+    <input type="password" placeholder="Enter your password">
+
+    <button>Login</button>
+
+    <p class="signup">
+        Don't have an account? <a href="#">Sign up</a>
+    </p>
+</div>
+</body>
