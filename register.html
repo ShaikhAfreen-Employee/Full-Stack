@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UrbanNest Furniture</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f1ee;
+        }
+
+        header {
+            background: linear-gradient(to right, #5d4037, #8d6e63);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        nav {
+            background-color: #3e2723;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffccbc;
+        }
+
+        .hero {
+            background: url("https://images.unsplash.com/photo-1505693314120-0d443867891c") center/cover;
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-box {
+            background-color: rgba(0,0,0,0.55);
+            color: white;
+            padding: 25px 40px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .hero-box button {
+            margin-top: 15px;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ff7043;
+            color: white;
+            cursor: pointer;
+        }
+
+        .section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #5d4037;
+            margin-bottom: 25px;
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+            width: 260px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .price {
+            color: #d84315;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .highlight {
+            background-color: #d7ccc8;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .bottom {
+            background-color: #3e2723;
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            .hero {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🪑 UrbanNest Furniture</h1>
+    <p>Design Your Comfort</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Collections</a>
+    <a href="#">Offers</a>
+    <a href="#">Contact</a>
+</nav>
+
+<section class="hero">
+    <div class="hero-box">
+        <p>Crafted with style & durability</p>
+        <button>Shop Now</button>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Elegant Furniture for Every Home</h2>
+    <h2>Our Best Sellers</h2>
+
+    <div class="product-container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7">
+            <div class="card-content">
+                <h3>Luxury Sofa</h3>
+                <p class="price">₹28,000</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc">
+            <div class="card-content">
+                <h3>Modern Chair</h3>
+                <p class="price">₹6,500</p>
+            </div>
+        </div>
+
+       
+</section>
+
+<div class="highlight">
+    Flat 20% Off on New Arrivals!
+</div>
+
+<div class="bottom">
+    © 2026 UrbanNest Furniture | Made with ❤️
+</div
