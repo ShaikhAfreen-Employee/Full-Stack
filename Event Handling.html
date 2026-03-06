@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creative Event Handling</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1{
+            color: #333;
+        }
+
+        .card{
+            background: white;
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        button{
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #ff6f61;
+            color: white;
+            font-size: 16px;
+        }
+
+        input{
+            padding: 8px;
+            margin: 10px;
+            width: 80%;
+        }
+
+        #hoverBox{
+            margin-top: 15px;
+            padding: 15px;
+            background: lightblue;
+            border-radius: 10px;
+        }
+
+        #message{
+            margin-top: 10px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>✨ Creative Event Handling Demo ✨</h1>
+
+    <div class="card">
+
+        <!-- Click Event -->
+        <button onclick="changeText()">Click Me 🎉</button>
+        <p id="clickText">Waiting for click...</p>
+
+        <!-- Hover Event -->
+        <div id="hoverBox" onmouseover="hoverIn()" onmouseout="hoverOut()">
+            Hover over me 👆
+        </div>
+
+        <!-- Keypress Event -->
+        <input type="text" id="nameInput" placeholder="Type your name..." onkeyup="showTyping()">
+        <p id="typingText"></p>
+
+        <!-- Submit Event -->
+        <form onsubmit="submitForm(event)">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <br>
+            <button type="submit">Submit 🚀</button>
+        </form>
+
+        <p id="message"></p>
+
+    </div>
+
+<script>
+    // Click Event
+    function changeText(){
+        document.getElementById("clickText").innerHTML = "Button Clicked! 🎊";
+    }
+
+    // Hover Event
+    function hoverIn(){
+        document.getElementById("hoverBox").style.background = "orange";
+        document.getElementById("hoverBox").innerHTML = "You are hovering! 😃";
+    }
+
+    function hoverOut(){
+        document.getElementById("hoverBox").style.background = "lightblue";
+        document.getElementById("hoverBox").innerHTML = "Hover over me 👆";
+    }
+
+    // Keypress Event
+    function showTyping(){
+        var name = document.getElementById("nameInput").value;
+        document.getElementById("typingText").innerHTML = "Typing: " + name;
+    }
+
+    // Submit Event
+    function submitForm(event){
+        event.preventDefault(); // prevent page reload
+        var email = document.getElementById("email").value;
+        document.getElementById("message").innerHTML = 
+            "Form Submitted Successfully! 📧 " + email;
+    }
+</script>
+
+</body>
+</html>
