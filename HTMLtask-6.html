@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pastel Form</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI', sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#f3f0ff;   /* Soft pastel lavender */
+}
+
+.form-box{
+  width:320px;
+  padding:30px;
+  background:#ffffff;
+  border-radius:15px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+h2{
+  text-align:center;
+  margin-bottom:20px;
+  color:#6c63ff;
+  font-weight:600;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  margin-bottom:12px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  outline:none;
+  transition:0.3s;
+}
+
+input:focus{
+  border-color:#a29bfe;
+  background:#faf9ff;
+}
+
+.error{
+  color:#ff7675;
+  font-size:12px;
+  margin-bottom:8px;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:#a29bfe;
+  color:white;
+  font-weight:500;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#8c84ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="form-box">
+  <h2>Create Account</h2>
+
+  <form onsubmit="return validateForm()">
+
+    <input type="text" id="name" placeholder="Full Name">
+    <div id="nameError" class="error"></div>
+
+    <input type="text" id="email" placeholder="Email Address">
+    <div id="emailError" class="error"></div>
+
+    <input type="password" id="password" placeholder="Password">
+    <div id="passwordError" class="error"></div>
+
+    <button type="submit">Register</button>
+
+  </form>
+</div>
+
+<script>
+function validateForm(){
+
+document.getElementById("nameError").innerHTML="";
+document.getElementById("emailError").innerHTML="";
+document.getElementById("passwordError").innerHTML="";
+
+let name=document.getElementById("name").value.trim();
+let email=document.getElementById("email").value.trim();
+let password=document.getElementById("password").value;
+
+let valid=true;
+
+if(name==""){
+document.getElementById("nameError").innerHTML="Please enter your name";
+valid=false;
+}
+
+if(email=="" || !email.includes("@")){
+document.getElementById("emailError").innerHTML="Please enter valid email";
+valid=false;
+}
+
+if(password.length<6){
+document.getElementById("passwordError").innerHTML="Minimum 6 characters required";
+valid=false;
+}
+
+return valid;
+}
+</script>
+
+</body>
+</html>
