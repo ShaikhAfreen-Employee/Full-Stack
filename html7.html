@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Git & GitHub Workflow</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+header {
+    background-color: #24292e;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.command {
+    background: #eef1f4;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    margin: 10px 0;
+}
+
+button {
+    padding: 6px 14px;
+    background-color: #2ea44f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #22863a;
+}
+
+.output {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: monospace;
+    white-space: pre-line;
+    min-height: 35px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+Git & GitHub Version Control Workflow
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>1. Initialize Repository</h2>
+<div class="command">git init</div>
+<button onclick="showOutput('init')">Run</button>
+<div class="output" id="init"></div>
+</div>
+
+<div class="card">
+<h2>2. Add & Commit</h2>
+<div class="command">
+git add .  
+git commit -m "Initial commit"
+</div>
+<button onclick="showOutput('commit')">Run</button>
+<div class="output" id="commit"></div>
+</div>
+
+<div class="card">
+<h2>3. Push to GitHub</h2>
+<div class="command">
+git push -u origin main
+</div>
+<button onclick="showOutput('push')">Run</button>
+<div class="output" id="push"></div>
+</div>
+
+<div class="card">
+<h2>4. Create Branch</h2>
+<div class="command">
+git checkout -b feature-branch
+</div>
+<button onclick="showOutput('branch')">Run</button>
+<div class="output" id="branch"></div>
+</div>
+
+<div class="card">
+<h2>5. Merge Branch</h2>
+<div class="command">
+git merge feature-branch
+</div>
+<button onclick="showOutput('merge')">Run</button>
+<div class="output" id="merge"></div>
+</div>
+
+<div class="card">
+<h2>6. Pull Latest Changes</h2>
+<div class="command">git pull origin main</div>
+<button onclick="showOutput('pull')">Run</button>
+<div class="output" id="pull"></div>
+</div>
+
+</div>
+
+<script>
+function showOutput(step) {
+
+let messages = {
+init: "Repository initialized successfully.",
+commit: "Files added and committed successfully.",
+push: "Project pushed to GitHub successfully.",
+branch: "New branch created and switched successfully.",
+merge: "Branch merged into main successfully.",
+pull: "Repository updated. Already up to date."
+};
+
+document.getElementById(step).innerText = messages[step];
+}
+</script>
+
+</body>
+</html>
