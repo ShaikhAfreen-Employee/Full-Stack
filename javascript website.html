@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creative DOM Example</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background-color: #eed1f5;
+            margin-top: 60px;
+        }
+        .box {
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            background-color: rgb(247, 199, 250);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2 id="heading">Welcome!</h2>
+        <p id="text">Click the buttons to see magic ✨</p>
+
+        <button onclick="changeContent()">Change Content</button>
+        <button onclick="changeStyle()">Change Style</button>
+        <button onclick="toggleText()">Show/Hide</button>
+    </div>
+
+    <script>
+        function changeContent() {
+            document.getElementById("text").innerHTML =
+                "DOM Manipulation is Working Successfully!";
+        }
+
+        function changeStyle() {
+            let h = document.getElementById("heading");
+            h.style.color = "white";
+            h.style.backgroundColor = "purple";
+            h.style.padding = "10px";
+            h.style.borderRadius = "5px";
+        }
+
+        function toggleText() {
+            let t = document.getElementById("text");
+            if (t.style.display === "none") {
+                t.style.display = "block";
+            } else {
+                t.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
