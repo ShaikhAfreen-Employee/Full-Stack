@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Abi Mart App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #9ee0e6, #9cf2f4);
+    }
+
+    .page {
+      display: none;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    .card-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #09b7ce;
+      color: white;
+      cursor: pointer;
+      width: 95%;
+    }
+
+    button:hover {
+      background: #3fc0ce;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- REGISTER -->
+<div id="registerPage" class="page active">
+  <div class="card-box">
+    <h3>Register </h3>
+    <input type="text" id="regName" placeholder="Name">
+    <input type="email" id="regEmail" placeholder="Email">
+    <input type="password" id="regPass" placeholder="Password">
+    <button onclick="register()">Register</button>
+    <p>Already have account? <a href="#" onclick="showPage('loginPage')">Login</a></p>
+  </div>
+</div>
+
+<!-- LOGIN -->
+<div id="loginPage" class="page">
+  <div class="card-box">
+    <h3>Login </h3>
+    <input type="email" id="logEmail" placeholder="Email">
+    <input type="password" id="logPass" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p>New user? <a href="#" onclick="showPage('registerPage')">Register</a></p>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboardPage" class="page">
+  <div class="container mt-5">
+    
+    <nav class="navbar navbar-dark bg-dark px-3">
+      <span class="navbar-brand">Abi Mart Dashboard</span>
+      <button class="btn btn-light" onclick="logout()">Logout</button>
+    </nav>
+
+    <div class="card p-4 shadow mt-4 text-center">
+      <h3 id="welcome"></h3>
+      <button class="btn btn-primary mt-3" onclick="toggleData()">Show/Hide Info</button>
+
+      <div id="extra" style="display:none; margin-top:15px;">
+         Welcome to Abi Mart! Enjoy your shopping experience.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// Page Navigation
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+}
+
+// Register
+function register() {
+  let name = regName.value;
+  let email = regEmail.value;
+  let pass = regPass.value;
+
+  if(name==""||email==""||pass==""){
+    alert("Fill all fields!");
+    return;
+  }
+
+  localStorage.setItem("name", name);
+  localStorage.setItem("email", email);
+  localStorage.setItem("pass", pass);
+
+  alert("Registered Successfully!");
+  showPage("loginPage");
+}
+
+// Login
+function login() {
+  let email = logEmail.value;
+  let pass = logPass.value;
+
+  if(email === localStorage.getItem("email") && pass === localStorage.getItem("pass")){
+    document.getElementById("welcome").innerText = "Welcome, " + localStorage.getItem("name");
+    showPage("dashboardPage");
+  } else {
+    alert("Invalid Credentials!");
+  }
+}
+
+// Toggle Data
+function toggleData() {
+  let x = document.getElementById("extra");
+  x.style.display = (x.style.display=="none")?"block":"none";
+}
+
+// Logout
+function logout() {
+  showPage("loginPage");
+}
+</script>
+
+</body>
+</html>
