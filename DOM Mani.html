@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Demo</title>
+  <style>
+    body { text-align:center; font-family: Arial; background:#f7f7f7; }
+    .box { margin-top:50px; }
+    button { padding:10px 20px; background:purple; color:white; border:none; }
+    #data { display:none; margin-top:20px; font-size:18px; }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Show / Hide Info 👀</h2>
+  <button onclick="toggle()">Toggle Data</button>
+
+  <div id="data">
+    🎉 Welcome to Abi Mart Dashboard!
+  </div>
+</div>
+
+<script>
+function toggle(){
+  let d = document.getElementById("data");
+  d.style.display = (d.style.display=="none")?"block":"none";
+}
+</script>
+
+</body>
+</html>
