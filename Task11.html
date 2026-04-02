@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MY FullStack Task</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 20px;
+            transition: 0.5s;
+        }
+
+        section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        img {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>✨ MY TASK 11 ✨</h1>
+
+    <!-- 1. Background Color -->
+    <section>
+        <h2>Change Background Color</h2>
+        <button onclick="changeColor()">Change Color</button>
+    </section>
+
+    <!-- 2. Live Text -->
+    <section>
+        <h2>Live Text Display</h2>
+        <input type="text" id="inputBox" placeholder="Type here..." onkeyup="showText()">
+        <p id="output"></p>
+    </section>
+
+    <!-- 3. Password Toggle -->
+    <section>
+        <h2>Password Toggle</h2>
+        <input type="password" id="password">
+        <button onclick="togglePassword()">Show/Hide</button>
+    </section>
+
+    <!-- 4. Image Slider -->
+    <section>
+        <h2>Image Slider</h2>
+        <img id="slider" width="300"><br><br>
+        <button onclick="prev()">Previous</button>
+        <button onclick="next()">Next</button>
+    </section>
+
+    <!-- 5. Counter -->
+    <section>
+        <h2>Counter</h2>
+        <h1 id="count">0</h1>
+        <button onclick="increase()">+</button>
+        <button onclick="decrease()">-</button>
+    </section>
+
+<script>
+    // 1. Change Background
+    function changeColor() {
+        document.body.style.backgroundColor = 
+            "#" + Math.floor(Math.random()*16777215).toString(16);
+    }
+
+    // 2. Live Text
+    function showText() {
+        let text = document.getElementById("inputBox").value;
+        document.getElementById("output").innerText = text;
+    }
+
+    // 3. Password Toggle
+    function togglePassword() {
+        let pass = document.getElementById("password");
+        pass.type = pass.type === "password" ? "text" : "password";
+    }
+
+    // 4. Image Slider (FIXED)
+    let images = [
+    "https://picsum.photos/400/250?1",
+    "https://picsum.photos/400/250?2",
+    "https://picsum.photos/400/250?3"
+];
+    let index = 0;
+
+    window.onload = function() {
+        showImage();
+    };
+
+    function showImage() {
+        document.getElementById("slider").src = images[index];
+    }
+
+    function next() {
+        index = (index + 1) % images.length;
+        showImage();
+    }
+
+    function prev() {
+        index = (index - 1 + images.length) % images.length;
+        showImage();
+    }
+
+    // 5. Counter
+    let count = 0;
+
+    function increase() {
+        count++;
+        document.getElementById("count").innerText = count;
+    }
+
+    function decrease() {
+        count--;
+        document.getElementById("count").innerText = count;
+    }
+</script>
+
+</body>
+</html>
